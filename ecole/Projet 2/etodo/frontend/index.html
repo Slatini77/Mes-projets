@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>E-Todo</h1>
+      <nav>
+        <button id="btn-login">Connexion</button>
+        <button id="btn-register">Inscription</button>
+        <button id="btn-logout" class="hidden">Déconnexion</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class=""app-card>
+      <!-- SECTION LOGIN -->
+      <section id="login-section" class="active">
+        <h2>Connexion</h2>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input type="password" id="login-password" placeholder="Mot de passe" required />
+          <button type="submit">Se connecter</button>
+        </form>
+        <p id="login-msg"></p>
+      </section>
+
+      <!-- SECTION REGISTER -->
+      <section id="register-section" class="hidden">
+        <h2>Créer un compte</h2>
+        <form id="register-form">
+          <input type="text" id="register-firstname" placeholder="Prénom" required />
+          <input type="text" id="register-name" placeholder="Nom" required />
+          <input type="email" id="register-email" placeholder="Email" required />
+          <input type="password" id="register-password" placeholder="Mot de passe" required />
+          <button type="submit">S’inscrire</button>
+        </form>
+        <p id="register-msg"></p>
+      </section>
+
+      <!-- SECTION TODOS -->
+      <section id="todos-section" class="hidden">
+        <h2>Mes tâches</h2>
+        <div id="todo-list"></div>
+
+        <h3>Nouvelle tâche</h3>
+        <form id="todo-form">
+          <input type="text" id="todo-title" placeholder="Titre" required />
+          <textarea id="todo-desc" placeholder="Description" required></textarea>
+          <input type="datetime-local" id="todo-due" required />
+          <select id="todo-status">
+            <option value="not started">Non commencée</option>
+            <option value="todo">À faire</option>
+            <option value="in progress">En cours</option>
+            <option value="done">Terminée</option>
+          </select>
+          <button type="submit">Ajouter</button>
+        </form>
+        <p id="todo-msg"></p>
+
+        <!-- SECTION EDIT -->
+        <h3 id="edit-title" class="hidden">Modifier une tâche</h3>
+        <form id="edit-form" class="hidden">
+          <input type="text" id="edit-title-input" required />
+          <textarea id="edit-desc-input" required></textarea>
+          <input type="datetime-local" id="edit-due-input" required />
+          <select id="edit-status-input">
+            <option value="not started">Non commencée</option>
+            <option value="todo">À faire</option>
+            <option value="in progress">En cours</option>
+            <option value="done">Terminée</option>
+          </select>
+          <button type="submit">Mettre à jour</button>
+        </form>
+        <p id="edit-msg"></p>
+      </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 — E-Todo | Projet Epitech</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
