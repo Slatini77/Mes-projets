@@ -1,4 +1,4 @@
-Projet 2 – Fullstack Portfolio v3
+Projet 2  Fullstack Portfolio v3
  Objectif
 Créer un portfolio dynamique avec une interface d’administration permettant de gérer les informations affichées (compétences, expériences, formations, etc.).
  Technologies
