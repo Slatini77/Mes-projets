@@ -1,0 +1,271 @@
+/* frontend/style.css */
+
+/* --- Variables globales --- */
+:root {
+  --blue-epitech: #0057ff;
+  --blue-hover: #0046d1;
+  --gray-light: #f3f4f6;
+  --gray-dark: #111827;
+  --border-radius: 10px;
+  --transition: 0.2s ease-in-out;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+/* --- Reset & base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-main);
+  background: linear-gradient(180deg, #eef2ff 0%, #e5e7eb 40%, #f9fafb 100%);
+  color: var(--gray-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header --- */
+header {
+  background: var(--blue-epitech);
+  color: white;
+  padding: 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+header nav button {
+  background: white;
+  color: var(--blue-epitech);
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+header nav button:hover {
+  background: var(--blue-hover);
+  color: white;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.35);
+  transform: translateY(-1px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Container principal --- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 920px;
+  margin: 2.5rem auto;
+  padding: 2.2rem 2.4rem;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+}
+
+/* --- Sections --- */
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  color: var(--blue-epitech);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+/* --- Formulaires --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="datetime-local"],
+textarea,
+select {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  transition: var(--transition);
+}
+
+textarea {
+  border-radius: 12px;
+  resize: vertical;
+  min-height: 70px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--blue-epitech);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+/* Boutons principaux des formulaires */
+form button[type="submit"] {
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #0057ff, #2563eb);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.2rem;
+}
+
+form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0046d1, #1d4ed8);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  transform: translateY(-1px);
+}
+
+/* --- Message d’info / erreur --- */
+#login-msg,
+#register-msg,
+#todo-msg,
+#edit-msg {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* Tu peux ajouter .error / .success depuis JS si tu veux */
+.error {
+  color: #b91c1c;
+}
+.success {
+  color: #15803d;
+}
+
+/* --- Liste des todos --- */
+#todo-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.todo-item {
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.8rem 0.9rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.todo-item h4 {
+  font-size: 1.02rem;
+  margin-bottom: 0.2rem;
+  color: #111827;
+}
+
+.todo-item p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.1rem;
+}
+
+/* boutons Modifier / Supprimer sous chaque todo */
+.todo-item .btn-edit,
+.todo-item .btn-delete {
+  margin-top: 0.4rem;
+  margin-right: 0.4rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.todo-item .btn-edit {
+  background: #e0ecff;
+  color: #1d4ed8;
+}
+
+.todo-item .btn-edit:hover {
+  background: #bfdbfe;
+}
+
+.todo-item .btn-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.todo-item .btn-delete:hover {
+  background: #fecaca;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.9rem 1.2rem;
+  }
+
+  main {
+    margin: 1.5rem auto;
+    padding: 1.5rem 1.3rem;
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav button {
+    margin-left: 0;
+    margin-right: 0.4rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
